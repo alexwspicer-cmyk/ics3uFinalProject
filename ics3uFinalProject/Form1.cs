@@ -18,7 +18,7 @@ namespace ics3uFinalProject
     public partial class Form1 : Form
     {
         //Stats for the game
-        int aiLevel = 8; //How quickly the monster will move
+        int aiLevel = 10; //How quickly the monster will move
         int aggressive = 0; //Aggressiveness; set to 1 to move faster
         int currentRoom; //Int to know what room the monster is in
         int moveCounter = 0; //How many seconds since the monster last moved
@@ -42,7 +42,6 @@ namespace ics3uFinalProject
             //Need to come back and add total turns
             if (moveCounter > 10 - aiLevel - aggressive + rand.Next(0,15)) //Math if statement that determines whether or not the monster will move
             {
-                testOutputLabel.Text += "\nAction\n";
                 
                 int actionSelected = rand.Next(1, 4 + aggressive); //Gets action selected, to choose where to move the monster. It can move to different places when aggressive
 
@@ -50,7 +49,7 @@ namespace ics3uFinalProject
                 {
                     moveCounter = 0; //Resets move counter
                 }
-                else if ((actionSelected == 2 || actionSelected == 3) && currentRoom == 10)
+                else if ((actionSelected == 2 || actionSelected == 3) && currentRoom == 10) //Moves the character to a new room
                 {
                     currentRoom = 9;
                 }
@@ -94,10 +93,67 @@ namespace ics3uFinalProject
                 {
                     currentRoom = 12;
                 }
+                else if (actionSelected == 2 && currentRoom == 6)
+                {
+                    currentRoom = 7;
+                }
+                else if (actionSelected == 3 && currentRoom == 6)
+                {
+                    currentRoom = 3;
+                }
+                else if (actionSelected == 4 && currentRoom ==6)
+                {
+                    currentRoom = 5;
+                }
+                else if (actionSelected == 2 && currentRoom == 5)
+                {
+                    currentRoom = 6;
+                }
+                else if (actionSelected == 3 && currentRoom == 5)
+                {
+                    currentRoom = 2;
+                }
+                else if (actionSelected == 4 && currentRoom == 5)
+                {
+                    currentRoom = 4;
+                }
+                else if (actionSelected == 2 && currentRoom == 4)
+                {
+                    currentRoom = 2;
+                }
+                else if (actionSelected == 3 && currentRoom == 4)
+                {
+                    currentRoom = 3;
+                }
+                else if (actionSelected == 4 && currentRoom == 4)
+                {
+                    currentRoom = 3;
+                }
+                else if (actionSelected == 2 && currentRoom == 3)
+                {
+                    currentRoom = 4;
+                }
+                else if ((actionSelected == 3 || actionSelected == 4) && currentRoom == 3)
+                {
+                    currentRoom = 100; //Attack stage 1
+                }
+                else if (actionSelected== 2 && currentRoom == 2)
+                {
+                    currentRoom = 5;
+                }
+                else if (actionSelected == 3 && currentRoom == 2)
+                {
+                    currentRoom = 4;
+                }
+                else if (actionSelected == 4 && currentRoom == 2)
+                {
+                    currentRoom = 100;
+                }
+
+                testOutputLabel.Text += "\nMoved to room " + currentRoom.ToString() + "\n";
 
 
-
-                    moveCounter = 0;
+                moveCounter = 0;
             }
             testOutputLabel.Text += moveCounter;
             moveCounter++; //Adds one second to the move counter if he doesn't move

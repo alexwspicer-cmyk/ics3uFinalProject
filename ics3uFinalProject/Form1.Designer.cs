@@ -43,14 +43,14 @@
             // 
             this.testOutputLabel.Location = new System.Drawing.Point(161, 15);
             this.testOutputLabel.Name = "testOutputLabel";
-            this.testOutputLabel.Size = new System.Drawing.Size(289, 392);
+            this.testOutputLabel.Size = new System.Drawing.Size(465, 392);
             this.testOutputLabel.TabIndex = 0;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1081, 587);
             this.Controls.Add(this.testOutputLabel);
             this.Name = "Form1";
             this.Text = "Form1";
