@@ -19,12 +19,14 @@ namespace ics3uFinalProject
     public partial class Form1 : Form
     {
         //Stats for the game
-        int aiLevel = 4; //How quickly the monster will move
+        int aiLevel = 15; //How quickly the monster will move
         int aggressive = 0; //Aggressiveness; set to 1 to move faster
         int currentRoom; //Int to know what room the monster is in
         int moveCounter = 0; //How many seconds since the monster last moved
 
-        int gameTime;
+        int currentPlayerRoom; //Int to know what room the player is viewing
+
+        int gameTime = 12; //In game time from 12am - 6am
 
         int ventHealth = 10; //Determines the health of the the vent, ventilation error happens at 0 health
 
@@ -37,6 +39,7 @@ namespace ics3uFinalProject
 
             testOutputLabel.Text += "Current Room : " + currentRoom.ToString() + "\n";
 
+            timeLabel.Text = gameTime.ToString() + "AM";
         }
 
 
@@ -168,11 +171,11 @@ namespace ics3uFinalProject
                 }
                 else if (actionSelected > 1 && currentRoom == 14)
                 {
-                    //Add lose here
+                    loseGame();
                 }
                 else if (actionSelected > 1 && currentRoom == 15)
                 {
-                    //add lose here
+                    loseGame();
                 }
                 else if (actionSelected > 2 && currentRoom == 100)
                 {
@@ -200,7 +203,7 @@ namespace ics3uFinalProject
                 }
                 else if (actionSelected > 1 && currentRoom == 400)
                 {
-                    //add lose here
+                    loseGame();
                 }
 
 
@@ -212,6 +215,15 @@ namespace ics3uFinalProject
             }
             testOutputLabel.Text += moveCounter;
             moveCounter++; //Adds one second to the move counter if he doesn't move
+        }
+
+        private void loseGame()
+        {
+            testOutputLabel.Text = "\nLost\n";
+            gameTimer.Stop();
+            ventTimer.Stop();
+            aggressionTimer.Stop();
+            clockTimer.Stop();
         }
 
         private void ventTimer_Tick(object sender, EventArgs e)
@@ -235,7 +247,7 @@ namespace ics3uFinalProject
         {
             ventButton.Enabled = true;
         }
-
+        
         private async void ventButton_Click(object sender, EventArgs e)
         {
             ventButton.Text = "RESETTING";
@@ -252,6 +264,41 @@ namespace ics3uFinalProject
             enableItems();
 
             ventHealth = 10; //Resets the vent health to full
+        }
+
+        private void aggressionTimer_Tick(object sender, EventArgs e)
+        {
+            if (gameTime > 3)
+            {
+                aggressive = 0; //Resets his aggression every 15 seconds, but stops past 4am making him constantly aggressive
+            }
+        }
+
+        private void clockTimer_Tick(object sender, EventArgs e)
+        {
+            //Changes the in game time by an hour every minute
+
+            if (gameTime == 12)
+            {
+                gameTime = 1;
+            }
+            else
+            {
+                gameTime++;
+            }
+
+            if (gameTime == 6)
+            {
+                //win game here
+            }
+
+            if (gameTime == 4)
+            {
+                aggressive = 1;
+            }
+
+            timeLabel.Text = gameTime.ToString() + "AM";
+
         }
     }
 }
