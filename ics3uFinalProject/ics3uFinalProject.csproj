@@ -65,6 +65,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -78,6 +79,67 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fnaf3-Office.webp" />
+    <None Include="Resources\map.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gameMap.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gameMap2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gameMap3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CAM_01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CAM_01.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CAM_02_Light_On.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CAM_03.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CAM_04.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CAM_05.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CAM_06.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CAM_07.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CAM_08.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CAM_09.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CAM_10.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CAM_11.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CAM_12.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CAM_13.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CAM_14.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CAM_15.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
