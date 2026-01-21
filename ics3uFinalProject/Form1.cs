@@ -25,7 +25,7 @@ namespace ics3uFinalProject
         int currentRoom; //Int to know what room the monster is in
         int moveCounter = 0; //How many seconds since the monster last moved
 
-        int currentPlayerRoom; //Int to know what room the player is viewing
+        int currentPlayerRoom = 1; //Int to know what room the player is viewing
 
         int gameTime = 12; //In game time from 12am - 6am
 
@@ -33,7 +33,7 @@ namespace ics3uFinalProject
         int audioUses = 4; //Gives the player 4 audio uses at the beginning of the game, audio error occurs when you run out
 
         bool mapToggle = false; //Shows the default room map on false, shows the vent map on true
-        bool panelToggle = false; //Shows cams on false, shows maintenance panel on true
+        bool panelToggle = true; //Shows cams on false, shows maintenance panel on true
         
 
         public Form1()
@@ -635,11 +635,16 @@ namespace ics3uFinalProject
                     this.BackgroundImage= Properties.Resources.CAM_15;
                 }
 
+                timeLabel.Visible = true;
+                panelToggleButton.Text = "<";
 
             }
             else if (panelToggle == true)
             {
-                panelNameLabel.Text = "Maintenance_Panel.EXE";
+                panelNameLabel.Text = "";
+                panelToggleButton.Text = ">";
+
+                timeLabel.Visible = false;
 
                 ventButton.Visible = true;
                 audioResetButton.Visible = true;
@@ -651,6 +656,8 @@ namespace ics3uFinalProject
 
                 mapToggleButton.Visible = false;
                 audioButton.Visible = false;
+
+                this.BackgroundImage = Properties.Resources.maintenanceRoom;
             }
 
         }
