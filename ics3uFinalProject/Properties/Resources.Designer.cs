@@ -63,9 +63,29 @@ namespace ics3uFinalProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap blackberryPlaybook {
+            get {
+                object obj = ResourceManager.GetObject("blackberryPlaybook", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap CAM_01 {
             get {
                 object obj = ResourceManager.GetObject("CAM_01", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CAM_01_ACTIVE {
+            get {
+                object obj = ResourceManager.GetObject("CAM_01_ACTIVE", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +103,29 @@ namespace ics3uFinalProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap CAM_02_ACTIVE {
+            get {
+                object obj = ResourceManager.GetObject("CAM_02_ACTIVE", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap CAM_03 {
             get {
                 object obj = ResourceManager.GetObject("CAM_03", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CAM_03_ACTIVE {
+            get {
+                object obj = ResourceManager.GetObject("CAM_03_ACTIVE", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +143,29 @@ namespace ics3uFinalProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap CAM_04_ACTIVE {
+            get {
+                object obj = ResourceManager.GetObject("CAM_04_ACTIVE", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap CAM_05 {
             get {
                 object obj = ResourceManager.GetObject("CAM_05", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CAM_05_ACTIVE {
+            get {
+                object obj = ResourceManager.GetObject("CAM_05_ACTIVE", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,9 +183,29 @@ namespace ics3uFinalProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap CAM_06_ACTIVE {
+            get {
+                object obj = ResourceManager.GetObject("CAM_06_ACTIVE", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap CAM_07 {
             get {
                 object obj = ResourceManager.GetObject("CAM_07", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CAM_07_ACTIVE {
+            get {
+                object obj = ResourceManager.GetObject("CAM_07_ACTIVE", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,9 +223,29 @@ namespace ics3uFinalProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap CAM_08_ACTIVE {
+            get {
+                object obj = ResourceManager.GetObject("CAM_08_ACTIVE", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap CAM_09 {
             get {
                 object obj = ResourceManager.GetObject("CAM_09", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CAM_09_ACTIVE {
+            get {
+                object obj = ResourceManager.GetObject("CAM_09_ACTIVE", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,9 +263,29 @@ namespace ics3uFinalProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap CAM_10_ACTIVE {
+            get {
+                object obj = ResourceManager.GetObject("CAM_10_ACTIVE", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap CAM_11 {
             get {
                 object obj = ResourceManager.GetObject("CAM_11", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CAM_11_ACTIVE {
+            get {
+                object obj = ResourceManager.GetObject("CAM_11_ACTIVE", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -183,9 +303,29 @@ namespace ics3uFinalProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap CAM_12_ACTIVE {
+            get {
+                object obj = ResourceManager.GetObject("CAM_12_ACTIVE", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap CAM_13 {
             get {
                 object obj = ResourceManager.GetObject("CAM_13", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CAM_13_ACTIVE {
+            get {
+                object obj = ResourceManager.GetObject("CAM_13_ACTIVE", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -203,9 +343,29 @@ namespace ics3uFinalProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap CAM_14_ACTIVE {
+            get {
+                object obj = ResourceManager.GetObject("CAM_14_ACTIVE", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap CAM_15 {
             get {
                 object obj = ResourceManager.GetObject("CAM_15", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CAM_15_ACTIVE {
+            get {
+                object obj = ResourceManager.GetObject("CAM_15_ACTIVE", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -246,6 +406,26 @@ namespace ics3uFinalProject.Properties {
         internal static System.Drawing.Bitmap maintenanceRoom {
             get {
                 object obj = ResourceManager.GetObject("maintenanceRoom", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap maintenanceRoom_ACTIVE {
+            get {
+                object obj = ResourceManager.GetObject("maintenanceRoom_ACTIVE", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap maintenanceRoom_ACTIVE_400 {
+            get {
+                object obj = ResourceManager.GetObject("maintenanceRoom_ACTIVE_400", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

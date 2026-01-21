@@ -144,5 +144,59 @@
   <ItemGroup>
     <None Include="Resources\maintenanceRoom.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blackberryPlaybook.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CAM_01_ACTIVE.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CAM_02_ACTIVE.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CAM_03_ACTIVE.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CAM_04_ACTIVE.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CAM_05_ACTIVE.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CAM_06_ACTIVE.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CAM_07_ACTIVE.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CAM_08_ACTIVE.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CAM_09_ACTIVE.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CAM_10_ACTIVE.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CAM_11_ACTIVE.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CAM_12_ACTIVE.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CAM_13_ACTIVE.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CAM_14_ACTIVE.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CAM_15_ACTIVE.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maintenanceRoom_ACTIVE.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maintenanceRoom_ACTIVE_400.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

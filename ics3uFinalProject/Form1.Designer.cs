@@ -57,7 +57,12 @@
             this.audioButton = new System.Windows.Forms.Button();
             this.panelToggleButton = new System.Windows.Forms.Button();
             this.panelNameLabel = new System.Windows.Forms.Label();
+            this.blackberryToggleButton = new System.Windows.Forms.Button();
+            this.luresLabel = new System.Windows.Forms.Label();
+            this.airflowLabel = new System.Windows.Forms.Label();
+            this.blackberryPictureBox = new System.Windows.Forms.PictureBox();
             this.mapPicture = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.blackberryPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mapPicture)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,10 +76,11 @@
             // 
             this.testOutputLabel.BackColor = System.Drawing.Color.Transparent;
             this.testOutputLabel.ForeColor = System.Drawing.SystemColors.Control;
-            this.testOutputLabel.Location = new System.Drawing.Point(385, 136);
+            this.testOutputLabel.Location = new System.Drawing.Point(260, 0);
             this.testOutputLabel.Name = "testOutputLabel";
             this.testOutputLabel.Size = new System.Drawing.Size(465, 567);
             this.testOutputLabel.TabIndex = 0;
+            this.testOutputLabel.Visible = false;
             // 
             // ventTimer
             // 
@@ -84,44 +90,42 @@
             // 
             // ventButton
             // 
-            this.ventButton.BackColor = System.Drawing.Color.Transparent;
+            this.ventButton.BackColor = System.Drawing.Color.Olive;
             this.ventButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ventButton.FlatAppearance.BorderColor = System.Drawing.Color.Olive;
             this.ventButton.FlatAppearance.BorderSize = 3;
-            this.ventButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Olive;
-            this.ventButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.ventButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.ventButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Olive;
             this.ventButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ventButton.Font = new System.Drawing.Font("PMingLiU-ExtB", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ventButton.ForeColor = System.Drawing.Color.Olive;
-            this.ventButton.Location = new System.Drawing.Point(16, 410);
+            this.ventButton.ForeColor = System.Drawing.Color.Black;
+            this.ventButton.Location = new System.Drawing.Point(581, 474);
             this.ventButton.Margin = new System.Windows.Forms.Padding(4);
             this.ventButton.Name = "ventButton";
-            this.ventButton.Size = new System.Drawing.Size(184, 59);
+            this.ventButton.Size = new System.Drawing.Size(298, 59);
             this.ventButton.TabIndex = 1;
             this.ventButton.Text = "RESET VENTILATION";
-            this.ventButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ventButton.UseVisualStyleBackColor = false;
             this.ventButton.Click += new System.EventHandler(this.ventButton_Click);
             // 
             // audioResetButton
             // 
-            this.audioResetButton.BackColor = System.Drawing.Color.Transparent;
+            this.audioResetButton.BackColor = System.Drawing.Color.Olive;
             this.audioResetButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.audioResetButton.FlatAppearance.BorderColor = System.Drawing.Color.Olive;
             this.audioResetButton.FlatAppearance.BorderSize = 3;
-            this.audioResetButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Olive;
-            this.audioResetButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.audioResetButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.audioResetButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Olive;
             this.audioResetButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.audioResetButton.Font = new System.Drawing.Font("PMingLiU-ExtB", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.audioResetButton.ForeColor = System.Drawing.Color.Olive;
+            this.audioResetButton.ForeColor = System.Drawing.Color.Black;
             this.audioResetButton.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.audioResetButton.Location = new System.Drawing.Point(16, 492);
+            this.audioResetButton.Location = new System.Drawing.Point(581, 316);
             this.audioResetButton.Margin = new System.Windows.Forms.Padding(4);
             this.audioResetButton.Name = "audioResetButton";
-            this.audioResetButton.Size = new System.Drawing.Size(184, 59);
+            this.audioResetButton.Size = new System.Drawing.Size(298, 59);
             this.audioResetButton.TabIndex = 2;
-            this.audioResetButton.Text = "RESET \r\nAUDIO";
-            this.audioResetButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.audioResetButton.Text = "RESET AUDIO";
             this.audioResetButton.UseVisualStyleBackColor = false;
             this.audioResetButton.Click += new System.EventHandler(this.audioResetButton_Click);
             // 
@@ -424,6 +428,63 @@
             this.panelNameLabel.TabIndex = 23;
             this.panelNameLabel.Text = "Panel Name";
             // 
+            // blackberryToggleButton
+            // 
+            this.blackberryToggleButton.BackColor = System.Drawing.Color.Transparent;
+            this.blackberryToggleButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.blackberryToggleButton.FlatAppearance.BorderColor = System.Drawing.Color.Olive;
+            this.blackberryToggleButton.FlatAppearance.BorderSize = 3;
+            this.blackberryToggleButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Olive;
+            this.blackberryToggleButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.blackberryToggleButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.blackberryToggleButton.Font = new System.Drawing.Font("PMingLiU-ExtB", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.blackberryToggleButton.ForeColor = System.Drawing.Color.Olive;
+            this.blackberryToggleButton.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.blackberryToggleButton.Location = new System.Drawing.Point(16, 23);
+            this.blackberryToggleButton.Margin = new System.Windows.Forms.Padding(4);
+            this.blackberryToggleButton.Name = "blackberryToggleButton";
+            this.blackberryToggleButton.Size = new System.Drawing.Size(64, 402);
+            this.blackberryToggleButton.TabIndex = 25;
+            this.blackberryToggleButton.Text = "PANEL TOGGLE";
+            this.blackberryToggleButton.UseVisualStyleBackColor = false;
+            this.blackberryToggleButton.Click += new System.EventHandler(this.blackberryToggleButton_Click);
+            // 
+            // luresLabel
+            // 
+            this.luresLabel.BackColor = System.Drawing.Color.Black;
+            this.luresLabel.Font = new System.Drawing.Font("MS Gothic", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.luresLabel.ForeColor = System.Drawing.Color.Olive;
+            this.luresLabel.Location = new System.Drawing.Point(568, 230);
+            this.luresLabel.Name = "luresLabel";
+            this.luresLabel.Size = new System.Drawing.Size(329, 82);
+            this.luresLabel.TabIndex = 26;
+            this.luresLabel.Text = "AUDIO : 0";
+            this.luresLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // airflowLabel
+            // 
+            this.airflowLabel.BackColor = System.Drawing.Color.Black;
+            this.airflowLabel.Font = new System.Drawing.Font("MS Gothic", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.airflowLabel.ForeColor = System.Drawing.Color.Olive;
+            this.airflowLabel.Location = new System.Drawing.Point(568, 388);
+            this.airflowLabel.Name = "airflowLabel";
+            this.airflowLabel.Size = new System.Drawing.Size(329, 82);
+            this.airflowLabel.TabIndex = 27;
+            this.airflowLabel.Text = "AIRFLOW : 10";
+            this.airflowLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // blackberryPictureBox
+            // 
+            this.blackberryPictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.blackberryPictureBox.BackgroundImage = global::ics3uFinalProject.Properties.Resources.blackberryPlaybook;
+            this.blackberryPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.blackberryPictureBox.Location = new System.Drawing.Point(499, 95);
+            this.blackberryPictureBox.Margin = new System.Windows.Forms.Padding(4);
+            this.blackberryPictureBox.Name = "blackberryPictureBox";
+            this.blackberryPictureBox.Size = new System.Drawing.Size(477, 627);
+            this.blackberryPictureBox.TabIndex = 24;
+            this.blackberryPictureBox.TabStop = false;
+            // 
             // mapPicture
             // 
             this.mapPicture.BackColor = System.Drawing.Color.Transparent;
@@ -443,6 +504,12 @@
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1496, 810);
+            this.Controls.Add(this.airflowLabel);
+            this.Controls.Add(this.luresLabel);
+            this.Controls.Add(this.blackberryToggleButton);
+            this.Controls.Add(this.ventButton);
+            this.Controls.Add(this.audioResetButton);
+            this.Controls.Add(this.blackberryPictureBox);
             this.Controls.Add(this.panelNameLabel);
             this.Controls.Add(this.panelToggleButton);
             this.Controls.Add(this.audioButton);
@@ -463,15 +530,17 @@
             this.Controls.Add(this.room2Button);
             this.Controls.Add(this.room1Button);
             this.Controls.Add(this.timeLabel);
-            this.Controls.Add(this.audioResetButton);
-            this.Controls.Add(this.ventButton);
             this.Controls.Add(this.testOutputLabel);
             this.Controls.Add(this.mapPicture);
             this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximumSize = new System.Drawing.Size(1514, 857);
+            this.MinimumSize = new System.Drawing.Size(1514, 857);
             this.Name = "Form1";
             this.Text = "10 Nights at Teddy\'s";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
+            ((System.ComponentModel.ISupportInitialize)(this.blackberryPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mapPicture)).EndInit();
             this.ResumeLayout(false);
 
@@ -508,6 +577,10 @@
         private System.Windows.Forms.PictureBox mapPicture;
         private System.Windows.Forms.Button panelToggleButton;
         private System.Windows.Forms.Label panelNameLabel;
+        private System.Windows.Forms.PictureBox blackberryPictureBox;
+        private System.Windows.Forms.Button blackberryToggleButton;
+        private System.Windows.Forms.Label luresLabel;
+        private System.Windows.Forms.Label airflowLabel;
     }
 }
 

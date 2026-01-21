@@ -20,7 +20,7 @@ namespace ics3uFinalProject
     public partial class Form1 : Form
     {
         //Stats for the game
-        int aiLevel = 6; //How quickly the monster will move
+        int aiLevel = 5; //How quickly the monster will move
         int aggressive = 0; //Aggressiveness; set to 1 to move faster
         int currentRoom; //Int to know what room the monster is in
         int moveCounter = 0; //How many seconds since the monster last moved
@@ -34,7 +34,7 @@ namespace ics3uFinalProject
 
         bool mapToggle = false; //Shows the default room map on false, shows the vent map on true
         bool panelToggle = true; //Shows cams on false, shows maintenance panel on true
-        
+        bool blackberryToggle = false; //Opens up the blackberry playbook
 
         public Form1()
         {
@@ -154,7 +154,7 @@ namespace ics3uFinalProject
                 }
                 else if (actionSelected== 2 && currentRoom == 2)
                 {
-                    currentRoom = 5;
+                    currentRoom = 100;
                 }
                 else if (actionSelected == 3 && currentRoom == 2)
                 {
@@ -178,11 +178,11 @@ namespace ics3uFinalProject
                 }
                 else if (actionSelected > 1 && currentRoom == 14)
                 {
-                    loseGame();
+                    currentRoom = 100;
                 }
                 else if (actionSelected > 1 && currentRoom == 15)
                 {
-                    loseGame();
+                    currentRoom = 100;
                 }
                 else if (actionSelected > 2 && currentRoom == 100)
                 {
@@ -231,6 +231,7 @@ namespace ics3uFinalProject
             ventTimer.Stop();
             aggressionTimer.Stop();
             clockTimer.Stop();
+            intervalTimer.Stop();
         }
 
         private void ventTimer_Tick(object sender, EventArgs e)
@@ -270,6 +271,7 @@ namespace ics3uFinalProject
             mapToggleButton.Enabled = false;
 
             panelToggleButton.Enabled = false;
+            blackberryToggleButton.Enabled = false;
         }
 
         private void enableItems() //Enables everything after items are done being reset
@@ -297,6 +299,7 @@ namespace ics3uFinalProject
             mapToggleButton.Enabled = true;
 
             panelToggleButton.Enabled = true;
+            blackberryToggleButton.Enabled = true;
         }
         
         private async void ventButton_Click(object sender, EventArgs e)
@@ -340,7 +343,13 @@ namespace ics3uFinalProject
 
             if (gameTime == 6)
             {
-                //win game here
+                //Wins the game
+
+                gameTimer.Stop();
+                ventTimer.Stop();
+                aggressionTimer.Stop();
+                clockTimer.Stop();
+                intervalTimer.Stop();
             }
 
             if (gameTime == 4)
@@ -540,15 +549,14 @@ namespace ics3uFinalProject
             if (audioUses <= 0) //Disables audio lures if you run out
             {
                 audioButton.Enabled = false ;
+                aggressive = 1;
             }
 
+            
 
             if (panelToggle == false) //Toggles between the two panels
             {
                 panelNameLabel.Text = "Camera_System.EXE";
-
-                ventButton.Visible = false;
-                audioResetButton.Visible = false;
 
                 mapPicture.Visible = true;
 
@@ -574,70 +582,147 @@ namespace ics3uFinalProject
                     audioButton.Visible = false;
                 }
 
-                if (currentPlayerRoom == 1)
+                if (currentPlayerRoom == 1 && currentRoom != 1) //Changes the images for each room
                 {
                     this.BackgroundImage = Properties.Resources.CAM_01;
                 }
-                else if (currentPlayerRoom == 2)
+                else if ( currentPlayerRoom == 1 && currentRoom == 1)
+                {
+                    this.BackgroundImage = Properties.Resources.CAM_01_ACTIVE;
+                }
+
+                else if (currentPlayerRoom == 2 && currentRoom != 2) // CAM 02
                 {
                     this.BackgroundImage = Properties.Resources.CAM_02;
                 }
-                else if (currentPlayerRoom == 3)
+                else if (currentPlayerRoom == 2 && currentRoom == 2)
                 {
-                    this.BackgroundImage= Properties.Resources.CAM_03;
+                    this.BackgroundImage = Properties.Resources.CAM_02_ACTIVE;
                 }
-                else if (currentPlayerRoom == 4)
+
+                else if (currentPlayerRoom == 3 && currentRoom != 3) //CAM 3
+                {
+                    this.BackgroundImage = Properties.Resources.CAM_03;
+                }
+                else if (currentPlayerRoom == 3 && currentRoom == 3)
+                {
+                    this.BackgroundImage  = Properties.Resources.CAM_03_ACTIVE;
+                }
+
+                else if (currentPlayerRoom == 4 && currentRoom != 4) //CAM 04
                 {
                     this.BackgroundImage = Properties.Resources.CAM_04;
                 }
-                else if (currentPlayerRoom == 5)
+                else if (currentPlayerRoom == 4 && currentRoom == 4)
+                {
+                    this.BackgroundImage = Properties.Resources.CAM_04_ACTIVE;
+                }
+
+                else if (currentPlayerRoom == 5 && currentRoom != 5) //CAM 05
                 {
                     this.BackgroundImage = Properties.Resources.CAM_05;
                 }
-                else if (currentPlayerRoom == 6)
+                else if (currentPlayerRoom == 5 && currentRoom == 5)
+                {
+                    this.BackgroundImage= Properties.Resources.CAM_05_ACTIVE;
+                }
+
+                else if (currentPlayerRoom == 6 && currentRoom != 6) //CAM 06
                 {
                     this.BackgroundImage = Properties.Resources.CAM_06;
                 }
-                else if (currentPlayerRoom == 7)
+                else if (currentPlayerRoom == 6 && currentRoom == 6)
+                {
+                    this.BackgroundImage = Properties.Resources.CAM_06_ACTIVE;
+                }
+
+                else if (currentPlayerRoom == 7 && currentRoom != 7) //CAM 07
                 {
                     this.BackgroundImage = Properties.Resources.CAM_07;
                 }
-                else if (currentPlayerRoom == 8)
+                else if (currentPlayerRoom == 7 && currentRoom == 7)
+                {
+                    this.BackgroundImage = Properties.Resources.CAM_07_ACTIVE;
+                }
+
+                else if (currentPlayerRoom == 8 && currentRoom != 8) //CAM 08
                 {
                     this.BackgroundImage = Properties.Resources.CAM_08;
                 }
-                else if (currentPlayerRoom == 9)
+                else if (currentPlayerRoom == 8 && currentRoom == 8)
+                {
+                    this.BackgroundImage = Properties.Resources.CAM_08_ACTIVE;
+                }
+
+                else if (currentPlayerRoom == 9 && currentRoom != 9) //CAM 09
                 {
                     this.BackgroundImage = Properties.Resources.CAM_09;
                 }
-                else if (currentPlayerRoom == 10)
+                else if (currentPlayerRoom == 9 && currentRoom == 9)
+                {
+                    this.BackgroundImage = Properties.Resources.CAM_09_ACTIVE;
+                }
+
+                else if (currentPlayerRoom == 10 && currentRoom != 10) //CAM 10
                 {
                     this.BackgroundImage = Properties.Resources.CAM_10;
                 }
-                else if (currentPlayerRoom == 11)
+                else if (currentPlayerRoom == 10 && currentRoom == 10)
+                {
+                    this.BackgroundImage= Properties.Resources.CAM_10_ACTIVE;
+                }
+
+                else if (currentPlayerRoom == 11 && currentRoom != 11) //CAM 11
                 {
                     this.BackgroundImage = Properties.Resources.CAM_11;
                 }
-                else if (currentPlayerRoom == 12)
+                else if (currentPlayerRoom == 11 && currentRoom == 11)
+                {
+                    this.BackgroundImage = Properties.Resources.CAM_11_ACTIVE;
+                }
+
+                else if (currentPlayerRoom == 12 && currentRoom != 12) //CAM 12
                 {
                     this.BackgroundImage = Properties.Resources.CAM_12;
                 }
-                else if (currentPlayerRoom == 13)
+                else if (currentPlayerRoom == 12 && currentRoom == 12)
+                {
+                    this.BackgroundImage = Properties.Resources.CAM_12_ACTIVE;
+                }
+
+                else if (currentPlayerRoom == 13 && currentRoom != 13) //CAM 13
                 {
                     this.BackgroundImage = Properties.Resources.CAM_13;
                 }
-                else if (currentPlayerRoom == 14)
+                else if (currentPlayerRoom == 13 && currentRoom == 13)
+                {
+                    this.BackgroundImage = Properties.Resources.CAM_13_ACTIVE;
+                }
+
+                else if (currentPlayerRoom == 14 && currentRoom != 14) //CAM 14
                 {
                     this.BackgroundImage = Properties.Resources.CAM_14;
                 }
-                else if (currentPlayerRoom == 15)
+                else if (currentPlayerRoom == 14 && currentRoom == 14)
                 {
-                    this.BackgroundImage= Properties.Resources.CAM_15;
+                    this.BackgroundImage = Properties.Resources.CAM_14_ACTIVE;
                 }
 
-                timeLabel.Visible = true;
-                panelToggleButton.Text = "<";
+                else if (currentPlayerRoom == 15 && currentRoom != 15)
+                {
+                    this.BackgroundImage = Properties.Resources.CAM_15;
+                }
+                else if (currentPlayerRoom == 15 && currentRoom == 15)
+                {
+                    this.BackgroundImage = Properties.Resources.CAM_15_ACTIVE;
+                }
 
+                    //Makes stuff visible
+                    timeLabel.Visible = true;
+                panelToggleButton.Text = "<";
+                blackberryToggleButton.Visible = false;
+                luresLabel.Visible = false;
+                airflowLabel.Visible = false;
             }
             else if (panelToggle == true)
             {
@@ -646,18 +731,68 @@ namespace ics3uFinalProject
 
                 timeLabel.Visible = false;
 
-                ventButton.Visible = true;
-                audioResetButton.Visible = true;
 
                 mapPicture.Visible = false;
 
                 disableRoomCams();
                 disableVentCams();
 
-                mapToggleButton.Visible = false;
-                audioButton.Visible = false;
+                blackberryToggleButton.Visible = true;
+                
+                luresLabel.Text = "AUDIO : " + audioUses.ToString();
 
-                this.BackgroundImage = Properties.Resources.maintenanceRoom;
+                if (ventHealth >= 0)
+                {
+                    airflowLabel.Text = "AIRFLOW : " + ventHealth.ToString();
+                }
+                else if (ventHealth < 0)
+                {
+                    airflowLabel.Text = "AIRFLOW : 0";
+                }
+
+                    mapToggleButton.Visible = false;
+                audioButton.Visible = false;
+                if (currentRoom == 100 || currentRoom == 200 || currentRoom == 300)
+                {
+                    this.BackgroundImage = Properties.Resources.maintenanceRoom_ACTIVE;
+                }
+                else if (currentRoom == 400)
+                {
+                    this.BackgroundImage = Properties.Resources.maintenanceRoom_ACTIVE_400;
+                }
+                else
+                {
+                    this.BackgroundImage = Properties.Resources.maintenanceRoom;
+                }
+            }
+
+            if (blackberryToggle  == true)
+            {
+                //Makes the blackberry visible
+                blackberryPictureBox.Visible = true;
+                ventButton.Visible = true;
+                audioResetButton.Visible = true;
+
+                luresLabel.Visible = true ;
+                airflowLabel .Visible = true;
+
+                panelToggleButton.Visible = false;
+
+                blackberryToggleButton.Text = ">";
+            }
+            else if (blackberryToggle == false)
+            {
+                //Makes it not visible
+                blackberryPictureBox.Visible = false;
+                ventButton.Visible = false;
+                audioResetButton.Visible= false;
+
+                luresLabel.Visible= false;
+                airflowLabel.Visible= false;
+
+                panelToggleButton.Visible = true;
+
+                blackberryToggleButton.Text = "<";
             }
 
         }
@@ -721,7 +856,7 @@ namespace ics3uFinalProject
                 {
                     currentRoom = 1;
                 }
-                else if (currentPlayerRoom == 2 && currentRoom == 100)
+                else if (currentPlayerRoom == 2 && (currentRoom == 100 || currentRoom == 200 || currentRoom == 300))
                 {
                     currentRoom = 2;
                 }
@@ -803,7 +938,7 @@ namespace ics3uFinalProject
             audioResetButton.Text = "RESET AUDIO";
             enableItems();
 
-            int audioNum = rand.Next(2, 6);
+            int audioNum = rand.Next(4, 6);
             audioUses = audioNum; //Random number of audio uses between 2 and 6
         }
 
@@ -814,6 +949,7 @@ namespace ics3uFinalProject
 
         private void panelToggleButton_Click(object sender, EventArgs e)
         {
+            //Changes the boolean when you click the button
             if (panelToggle == false)
             {
                 panelToggle = true;
@@ -822,6 +958,16 @@ namespace ics3uFinalProject
 
 
             
+        }
+
+        private void blackberryToggleButton_Click(object sender, EventArgs e)
+        {
+            //Changes the boolean when you click the button
+            if (blackberryToggle == false)
+            {
+                blackberryToggle = true;
+            }
+            else { blackberryToggle = false; }
         }
     }
 }
