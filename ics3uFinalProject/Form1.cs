@@ -20,7 +20,7 @@ namespace ics3uFinalProject
     public partial class Form1 : Form
     {
         //Stats for the game
-        int aiLevel = 5; //How quickly the monster will move
+        int aiLevel = 4; //How quickly the monster will move
         int aggressive = 0; //Aggressiveness; set to 1 to move faster
         int currentRoom; //Int to know what room the monster is in
         int moveCounter = 0; //How many seconds since the monster last moved
@@ -166,11 +166,11 @@ namespace ics3uFinalProject
                 }
                 else if (actionSelected > 1  && currentRoom == 11)
                 {
-                    currentRoom = 300;
+                    currentRoom = 100;
                 }
                 else if (actionSelected > 1 && currentRoom == 12)
                 {
-                    currentRoom = 300;
+                    currentRoom = 100;
                 }
                 else if (actionSelected > 1 && currentRoom == 13)
                 {
@@ -186,11 +186,11 @@ namespace ics3uFinalProject
                 }
                 else if (actionSelected > 2 && currentRoom == 100)
                 {
-                    currentRoom = 200;
+                    currentRoom = 400;
                 }
                 else if (actionSelected > 2 && currentRoom == 200)
                 {
-                    currentRoom = 300;
+                    currentRoom = 400;
                 }
                 else if (actionSelected == 2 && currentRoom == 300)
                 {
@@ -224,8 +224,14 @@ namespace ics3uFinalProject
             moveCounter++; //Adds one second to the move counter if he doesn't move
         }
 
-        private void loseGame()
+        private async Task loseGame()
         {
+            mapToggle = false; 
+            panelToggle = true; 
+            blackberryToggle = false;
+
+            await Task.Delay(50);
+
             testOutputLabel.Text = "\nLost\n";
             gameTimer.Stop();
             ventTimer.Stop();
@@ -849,6 +855,7 @@ namespace ics3uFinalProject
 
             Random randNum = new Random();
             int selectedNum = randNum.Next(0, 8);
+            
 
             if (selectedNum < 6) //If the audio lure works, 86% chance of it working
             {
