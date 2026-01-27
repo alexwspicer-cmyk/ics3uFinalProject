@@ -17,6 +17,7 @@ namespace ics3uFinalProject
     //January 2026
     //10 Nights at Teddy's
 
+
     public partial class Form1 : Form
     {
         //Stats for the game
@@ -36,6 +37,11 @@ namespace ics3uFinalProject
         bool panelToggle = true; //Shows cams on false, shows maintenance panel on true
         bool blackberryToggle = false; //Opens up the blackberry playbook
 
+        //Stuff for the confetti shown when you win the game!
+        List<Confetti> confettiPieces = new List<Confetti>();
+        Timer confettiTimer = new Timer();
+        bool showConfetti = false;
+
         public Form1()
         {
             Random rand = new Random();
@@ -47,6 +53,7 @@ namespace ics3uFinalProject
 
             timeLabel.Text = gameTime.ToString() + "AM";
 
+            
         }
 
 
@@ -210,6 +217,7 @@ namespace ics3uFinalProject
                 }
                 else if (actionSelected > 1 && currentRoom == 400)
                 {
+                    
                     loseGame();
                 }
 
@@ -229,15 +237,23 @@ namespace ics3uFinalProject
             mapToggle = false; 
             panelToggle = true; 
             blackberryToggle = false;
+            
+
 
             await Task.Delay(50);
 
+            this.BackgroundImage = Properties.Resources.maintenanceRoom_ACTIVE_400;
             testOutputLabel.Text = "\nLost\n";
             gameTimer.Stop();
             ventTimer.Stop();
             aggressionTimer.Stop();
             clockTimer.Stop();
             intervalTimer.Stop();
+
+
+            blackberryToggleButton.Visible = false;
+            panelToggleButton.Visible = false;
+
         }
 
         private void ventTimer_Tick(object sender, EventArgs e)
@@ -334,7 +350,7 @@ namespace ics3uFinalProject
             }
         }
 
-        private void clockTimer_Tick(object sender, EventArgs e)
+        private async void clockTimer_Tick(object sender, EventArgs e)
         {
             //Changes the in game time by an hour every minute
 
@@ -351,11 +367,29 @@ namespace ics3uFinalProject
             {
                 //Wins the game
 
+                
+                mapToggle = false;
+                panelToggle = true;
+                blackberryToggle = false;
+
+
+
+                await Task.Delay(50);
+
+
                 gameTimer.Stop();
                 ventTimer.Stop();
                 aggressionTimer.Stop();
                 clockTimer.Stop();
                 intervalTimer.Stop();
+
+                blackberryToggleButton.Visible = false;
+                panelToggleButton.Visible = false;
+
+                StartConfetti();
+                this.BackgroundImage = Properties.Resources._6AM;
+
+                await Task.Delay(10000);
             }
 
             if (gameTime == 4)
@@ -764,7 +798,7 @@ namespace ics3uFinalProject
                 }
                 else if (currentRoom == 400)
                 {
-                    this.BackgroundImage = Properties.Resources.maintenanceRoom_ACTIVE_400;
+                    this.BackgroundImage = Properties.Resources.maintenanceRoom_ACTIVE;
                 }
                 else
                 {
@@ -859,11 +893,11 @@ namespace ics3uFinalProject
 
             if (selectedNum < 6) //If the audio lure works, 86% chance of it working
             {
-                if (currentPlayerRoom == 1 && currentRoom == 400)
+                if (currentPlayerRoom == 1 && (currentRoom == 400 || currentRoom == 100))
                 {
                     currentRoom = 1;
                 }
-                else if (currentPlayerRoom == 2 && (currentRoom == 100 || currentRoom == 200 || currentRoom == 300))
+                else if (currentPlayerRoom == 2 && (currentRoom == 100 || currentRoom == 200 || currentRoom == 400))
                 {
                     currentRoom = 2;
                 }
@@ -954,6 +988,63 @@ namespace ics3uFinalProject
             
         }
 
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            base.OnPaint(e);
+
+            if (!showConfetti) return;
+
+            foreach (var c in confettiPieces)
+            {
+                using (Brush b = new SolidBrush(c.Color))
+                {
+                    e.Graphics.FillRectangle(b, c.X, c.Y, c.Size, c.Size);
+                }
+            }
+        }
+
+        class Confetti
+        {
+            public float X, Y;
+            public float SpeedY;
+            public int Size;
+            public Color Color;
+        }
+
+        void StartConfetti()
+        {
+            Random rand = new Random();
+            confettiPieces.Clear();
+
+            for (int i = 0; i < 200; i++)
+            {
+                confettiPieces.Add(new Confetti
+                {
+                    X = rand.Next(0, ClientSize.Width),
+                    Y = rand.Next(-ClientSize.Height, 0),
+                    SpeedY = rand.Next(2, 8),
+                    Size = rand.Next(4, 10),
+                    Color = Color.FromArgb(
+                        rand.Next(256),
+                        rand.Next(256),
+                        rand.Next(256))
+                });
+            }
+
+            showConfetti = true;
+
+            confettiTimer.Interval = 16; // ~60 FPS
+            confettiTimer.Tick += (s, e) =>
+            {
+                foreach (var c in confettiPieces)
+                    c.Y += c.SpeedY;
+
+                Invalidate(); // Triggers repaint
+            };
+
+            confettiTimer.Start();
+        }
+
         private void panelToggleButton_Click(object sender, EventArgs e)
         {
             //Changes the boolean when you click the button
@@ -976,5 +1067,8 @@ namespace ics3uFinalProject
             }
             else { blackberryToggle = false; }
         }
+
+
+
     }
 }

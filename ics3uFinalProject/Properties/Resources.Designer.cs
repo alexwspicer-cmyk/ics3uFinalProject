@@ -63,6 +63,16 @@ namespace ics3uFinalProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _6AM {
+            get {
+                object obj = ResourceManager.GetObject("_6AM", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap blackberryPlaybook {
             get {
                 object obj = ResourceManager.GetObject("blackberryPlaybook", resourceCulture);
